@@ -1,0 +1,29 @@
+.cart {
+  position: relative;
+  cursor: pointer;
+}
+
+.iconPath {
+  fill: var(--col-headings);
+  transition: fill var(--trans);
+}
+
+.cart:hover .iconPath {
+  fill: var(--col-accent);
+}
+
+.counter {
+  display: grid;
+  place-items: center;
+  width: 12px;
+  height: 13px;
+  background-color: #301346;
+  color: #fff;
+  border-radius: 6px;
+  font-family: var(--ff-products);
+  font-size: 8px;
+  position: absolute;
+  top: 20%;
+  right: -5px;
+  transition: background-color var(--trans);
+}

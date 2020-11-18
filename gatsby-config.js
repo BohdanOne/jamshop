@@ -32,6 +32,7 @@ module.exports = {
       options: {
         fonts: [
           `montserrat:400,700`,
+          `roboto:400`
         ],
         display: 'swap'
       }
