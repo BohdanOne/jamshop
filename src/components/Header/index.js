@@ -1,11 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import styles from "./header.module.css"
+
 export default function Header() {
   return (
-    <header>
+    <header className={styles.header}>
       <div>
-        <Link to="/">JAM SHOP</Link>
+        <Link className={styles.title} to="/">JAM SHOP</Link>
       </div>
     </header>
   )

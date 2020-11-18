@@ -1,0 +1,29 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 4.44%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}
+
+.title {
+  text-decoration: none;
+  color: var(--col-headline);
+  font-weight: var(--fw-bold);
+  font-size: 22px;
+  line-height: 1.22;
+  border-bottom: 4px solid transparent;
+  transition: border var(--trans), color var(--trans);
+}
+
+.title:hover {
+  color: var(--col-accent);
+  border-color: var(--col-accent);
+}

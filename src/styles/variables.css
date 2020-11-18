@@ -1,6 +1,15 @@
 :root {
+  /* fonts */
   --ff-main: "Montserrat", sans-serif;
   --ff-headings: Georgia;
   --fw-bold: 700;
   --fw-regular: 400;
+  /* colors */
+  --col-bg: #1c042e;
+  --col-headline: #e4e3e3;
+  --col-headings: #eee;
+  --col-txt: #c4c4c4;
+  --col-accent: #ac538e;
+  /* transitions */
+  --trans: 300ms ease-in-out;
 }

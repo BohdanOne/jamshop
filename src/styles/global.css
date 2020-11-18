@@ -1,3 +1,4 @@
 html {
   font-family: var(--ff-main);
+  background-color: var(--col-bg);
 }
