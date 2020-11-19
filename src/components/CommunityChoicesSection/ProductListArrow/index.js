@@ -4,9 +4,10 @@ import styles from "./productListArrow.module.css"
 
 function ProductListArrow({ direction, onClick }) {
   return (
-    <div
+    <button
       onClick={onClick}
       className={styles.arrowContainer}
+      aria-label={`move list to the ${direction}`}
     >
       <svg
         width="65"
@@ -27,7 +28,7 @@ function ProductListArrow({ direction, onClick }) {
           <path d="M26 20L43 33L26 46" stroke="white" strokeWidth="4" />
         )}
       </svg>
-    </div>
+    </button>
   )
 }
 

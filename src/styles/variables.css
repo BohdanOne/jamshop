@@ -11,6 +11,8 @@
   --col-headings: #eee;
   --col-txt: #c4c4c4;
   --col-accent: #ac538e;
+  --col-card: #331f41;
+  --col-card-border: #969393;
   /* transitions */
   --trans: 300ms ease-in-out;
 }
