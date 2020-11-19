@@ -7,7 +7,7 @@
 
 .arrowContainer * {
   fill: #fff;
-  fill-opacity: .2;
+  fill-opacity: .05;
   stroke: #fff;
   cursor: pointer;
   transition: stroke var(--trans);
