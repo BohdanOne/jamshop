@@ -1,5 +1,6 @@
 .productCard {
-  min-width: 260px;
-  max-width: 25%;
-  scroll-snap-align: center;
+  width: 265px;
+  min-width: 265px;
+  /* max-width: 265px; */
+  /* margin: 20px; */
 }

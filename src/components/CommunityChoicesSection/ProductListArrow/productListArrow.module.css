@@ -1,0 +1,15 @@
+.arrowContainer {
+  display: grid;
+  place-items: center;
+}
+
+.arrowContainer * {
+  fill: none;
+  stroke: #fff;
+  cursor: pointer;
+  transition: stroke var(--trans);
+}
+
+.arrowContainer svg:hover * {
+  stroke: var(--col-accent);
+}

@@ -1,12 +1,4 @@
 .listContainer {
   color: white;
   padding: 0 32px;
-  display: flex;
-}
-
-.list {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: hidden;
-  scroll-snap-type: x mandatory;
 }
