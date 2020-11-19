@@ -1,0 +1,15 @@
+.productSummary {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--col-headings);
+  font-weight: var(--fw-bold);
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 5px 0;
+}
+
+.img {
+  width: 26px;
+  height: 28px;
+}

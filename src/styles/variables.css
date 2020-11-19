@@ -13,6 +13,8 @@
   --col-accent: #ac538e;
   --col-card: #331f41;
   --col-card-border: #969393;
+  --col-cart: #220538;
+  --col-cart-border: #f5f5f5;
   /* transitions */
   --trans: 300ms ease-in-out;
 }
