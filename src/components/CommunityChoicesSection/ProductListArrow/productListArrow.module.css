@@ -4,10 +4,15 @@
 }
 
 .arrowContainer * {
-  fill: none;
+  fill: #fff;
+  fill-opacity: 5%;
   stroke: #fff;
   cursor: pointer;
   transition: stroke var(--trans);
+}
+
+.arrowContainer svg path {
+  fill-opacity: 0%;
 }
 
 .arrowContainer svg:hover * {
