@@ -1,0 +1,20 @@
+.section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 53px 0;
+}
+
+.sectionTitle {
+  color: var(--col-headings);
+  font-weight: var(--fw-bold);
+  font-size: 28px;
+}
+
+.sectionIntro {
+  color: var(--col-txt);
+  font-weight: var(--fw-regular);
+  font-size: 16px;
+  line-height: 1.25;
+  max-width: 373px;
+}
