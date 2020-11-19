@@ -67,6 +67,10 @@
 }
 
 @media (max-width: 1046px) {
+  .hero {
+    margin: 100px auto;
+  }
+
   .heroContent {
     width: 100%;
     padding-left: 0;
@@ -92,7 +96,7 @@
   .heroSlogan {
     font-size: 32px;
   }
-  
+
   .btn {
     font-size: 10px;
   }

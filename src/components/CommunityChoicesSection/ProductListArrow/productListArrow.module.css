@@ -2,21 +2,35 @@
   display: grid;
   place-items: center;
   background-color: transparent;
-  border: none; 
+  border: none;
 }
 
 .arrowContainer * {
   fill: #fff;
-  fill-opacity: 5%;
+  fill-opacity: .2;
   stroke: #fff;
   cursor: pointer;
   transition: stroke var(--trans);
 }
 
 .arrowContainer svg path {
-  fill-opacity: 0%;
+  fill-opacity: 0;
 }
 
 .arrowContainer svg:hover * {
   stroke: var(--col-accent);
+}
+
+@media (max-width: 775px) {
+  .arrowContainer svg {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+@media (max-width: 455px) {
+  .arrowContainer svg {
+    width: 40px;
+    height: 40px;
+  }
 }

@@ -1,45 +1,46 @@
 .productCard {
   position: relative;
   width: 265px;
-  height: 273px;
   min-width: 265px;
-  background-color: var(--col-card);
-  border: 3px solid var(--col-card-border);
+  height: 273px;
+  padding: 20px 22px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px 22px;
+  background-color: var(--col-card);
+  border: 3px solid var(--col-card-border);
+  cursor: pointer;
 }
 
 .cardImg {
+  align-self: center;
   width: 91px;
   height: 92px;
-  align-self: center;
 }
 
 .cardTitle {
+  margin-bottom: 0;
   text-transform: uppercase;
   font-weight: var(--fw-bold);
   font-size: 18px;
   color: var(--col-headings);
-  margin-bottom: 0;
 }
 
 .cardTxt {
+  max-width: 192px;
   font-weight: var(--fw-regular);
   font-size: 14px;
   line-height: 1.22;
   color: var(--col-txt);
-  max-width: 192px;
 }
 
 .addToCartBtn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
   appearance: none;
   border: none;
   background-color: transparent;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
   cursor: pointer;
   transition: transform var(--trans);
 }
@@ -55,4 +56,28 @@
 
 .addToCartBtn:hover path {
   fill: var(--col-card);
+}
+
+@media (max-width: 425px) {
+  .productCard {
+    min-width: 170px;
+  }
+
+  .cardImg {
+    width: 70px;
+    height: 71px;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+  }
+
+  .cardTxt {
+    font-size: 12px;
+  }
+
+  .addToCartBtn {
+    right: 5px;
+    bottom: 5px;
+  }
 }

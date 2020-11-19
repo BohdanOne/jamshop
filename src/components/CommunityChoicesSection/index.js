@@ -7,7 +7,7 @@ import styles from "./communityChoicesSection.module.css"
 function CommunityChoicesSection() {
   return (
     <section className={styles.section}>
-      <header>
+      <header className={styles.sectionHeader}>
         <h2 className={styles.sectionTitle}>Explore community choices</h2>
         <p className={styles.sectionIntro}>
           Updated daily based on most popular choices among dev community
