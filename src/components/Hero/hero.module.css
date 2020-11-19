@@ -1,26 +1,27 @@
 .hero {
   max-width: 1145px;
-  margin: 101px auto 0;
+  margin: 101px auto 185px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.heroImg {
+  height: auto;
+  max-width: 100%;
 }
 
 .heroContent {
   position: relative;
   height: 100%;
-  width: 50%;
   min-width: 500px;
+  width: 50%;
+  max-width: 570px;
+  padding-left: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.heroImg {
-  max-height: 100%;
-  width: auto;
-  max-width: 100%;
 }
 
 .heroSlogan {
@@ -37,27 +38,62 @@
   top: 60px;
 }
 
-.backgroundImg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -1;
-}
-
 .btn {
-  background-color: var(--col-accent);
+  align-self: flex-start;
   padding: 1em 2em;
+  margin: 10px;
   width: fit-content;
-  border: 2px solid transparent;
-  border-radius: 4px;
-  color: #fff;
   font-size: 13px;
   font-family: inherit;
   font-weight: var(--fw-bold);
+  color: #fff;
+  background-color: var(--col-accent);
+  border: 2px solid transparent;
+  border-radius: 4px;
   cursor: pointer;
   transition: border var(--trans);
 }
 
 .btn:hover {
   border: 2px solid;
+}
+
+.backgroundImg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  max-width: 100%;
+}
+
+@media (max-width: 1046px) {
+  .heroContent {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 682px) {
+  .hero {
+    margin: 50px auto;
+  }
+
+  .heroContent {
+    padding: 0;
+    min-width: 100%;
+  }
+
+  .heroSlogan {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 454px) {
+  .heroSlogan {
+    font-size: 32px;
+  }
+  
+  .btn {
+    font-size: 10px;
+  }
 }
