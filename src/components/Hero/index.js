@@ -10,7 +10,7 @@ function HomepageHero() {
   return (
     <section className={styles.hero}>
       <img src={HeroImage} className={styles.heroImg} alt="Vector Monitor" />
-      <div className={styles.heroSection}>
+      <div className={styles.heroContent}>
         <img src={HeroDecor} className={styles.decorImg} />
         <h1 className={styles.heroSlogan}>
           Don't waste time
