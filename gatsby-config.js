@@ -30,12 +30,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `montserrat:400,700`,
-          `roboto:400`
-        ],
-        display: 'swap'
-      }
+        fonts: [`montserrat:400,700`, `roboto:400`],
+        display: "swap",
+      },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/data/products`,
+      },
+    },
+    `gatsby-transformer-remark`,
   ],
 }
