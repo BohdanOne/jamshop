@@ -1,17 +1,32 @@
-import React from "react"
+import React, { useRef } from "react"
+import { navigate } from "gatsby"
 
 import Dumy from "../../../assets/products/dumy.svg"
 import styles from "./productCard.module.css"
 
 function ProductCard({ product }) {
-  const { name, excerpt } = product
+  const btnRef = useRef()
+  const { name, excerpt, slug } = product
+
+  function goToProductPage(event) {
+    if (btnRef.current.contains(event.target)) {
+      return
+    }
+    navigate(slug)
+  }
 
   return (
-    <div className={styles.productCard}>
+    <div
+      className={styles.productCard}
+      onClick={(e) => {
+        goToProductPage(e)
+      }}
+    >
       <img className={styles.cardImg} src={Dumy} alt={name} />
       <h3 className={styles.cardTitle}>{name}</h3>
       <p className={styles.cardTxt}>{excerpt}</p>
       <button
+        ref={btnRef}
         className={styles.addToCartBtn}
         aria-label={`Add ${name} to cart`}
       >
