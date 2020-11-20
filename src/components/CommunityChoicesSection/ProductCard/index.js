@@ -4,14 +4,16 @@ import Dumy from "../../../assets/products/dumy.svg"
 import styles from "./productCard.module.css"
 
 function ProductCard({ product }) {
+  const { name, excerpt } = product
+
   return (
     <div className={styles.productCard}>
-      <img className={styles.cardImg} src={Dumy} alt={product.name} />
-      <h3 className={styles.cardTitle}>{product.name}</h3>
-      <p className={styles.cardTxt}>{product.excerpt}</p>
+      <img className={styles.cardImg} src={Dumy} alt={name} />
+      <h3 className={styles.cardTitle}>{name}</h3>
+      <p className={styles.cardTxt}>{excerpt}</p>
       <button
         className={styles.addToCartBtn}
-        aria-label={`Add ${product.name} to cart`}
+        aria-label={`Add ${name} to cart`}
       >
         <svg
           width="44"

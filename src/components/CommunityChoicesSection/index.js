@@ -16,7 +16,7 @@ function CommunityChoicesSection() {
           }
         }
       }
-    `
+    `,
   )
   const { title, lead } = data.markdownRemark.frontmatter
 

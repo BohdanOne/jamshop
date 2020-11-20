@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import Carousel, { consts } from "react-elastic-carousel"
+
 import styles from "./productList.module.css"
-import products from "./dummyData"
 import ProductCard from "../ProductCard/"
 import ProductListArrow from "../ProductListArrow/index"
 
@@ -25,6 +26,28 @@ function calculateItemsToShow(parentWidth) {
 }
 
 function ProductList() {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        allMarkdownRemark(filter: { frontmatter: { slug: { ne: "" } } }) {
+          nodes {
+            frontmatter {
+              name
+              slug
+              excerpt
+            }
+          }
+        }
+      }
+    `,
+  )
+
+  const productsFrontmatter = data.allMarkdownRemark.nodes
+
+  const products = productsFrontmatter
+    .map((product) => product.frontmatter)
+    .filter((product) => product.name !== null)
+
   const ref = useRef(null)
   const [itemsToShow, setItemsToShow] = useState(null)
 
