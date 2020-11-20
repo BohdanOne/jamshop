@@ -46,6 +46,8 @@
   font-size: 13px;
   font-family: inherit;
   font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  text-decoration: none;
   color: #fff;
   background-color: var(--col-accent);
   border: 2px solid transparent;
