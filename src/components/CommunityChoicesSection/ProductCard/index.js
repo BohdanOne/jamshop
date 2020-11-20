@@ -1,11 +1,14 @@
-import React, { useRef } from "react"
+import React, { useRef, useContext } from "react"
 import { navigate } from "gatsby"
 
 import Dumy from "../../../assets/products/dumy.svg"
 import styles from "./productCard.module.css"
+import { CartContext, actionTypes } from "../../../contexts/CartContext"
 
 function ProductCard({ product }) {
   const btnRef = useRef()
+  const { dispatch } = useContext(CartContext)
+
   const { name, excerpt, slug } = product
 
   function goToProductPage(event) {
@@ -13,6 +16,13 @@ function ProductCard({ product }) {
       return
     }
     navigate(slug)
+  }
+
+  function addToCart() {
+    dispatch({
+      type: actionTypes.ADD_TO_CART,
+      payload: product,
+    })
   }
 
   return (
@@ -29,6 +39,7 @@ function ProductCard({ product }) {
         ref={btnRef}
         className={styles.addToCartBtn}
         aria-label={`Add ${name} to cart`}
+        onClick={addToCart}
       >
         <svg
           width="44"

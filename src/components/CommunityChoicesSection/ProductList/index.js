@@ -35,6 +35,7 @@ function ProductList() {
               name
               slug
               excerpt
+              price
             }
           }
         }

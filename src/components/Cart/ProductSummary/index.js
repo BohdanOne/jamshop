@@ -1,17 +1,30 @@
-import React from "react"
+import React, { useContext } from "react"
 
 import Dumy from "../../../assets/products/dumy.svg"
 import styles from "./productSummary.module.css"
+import { CartContext, actionTypes } from "../../../contexts/CartContext"
 
 function ProductSummary({ product }) {
+  const { name, price, id } = product
+
+  const { dispatch } = useContext(CartContext)
+
+  function removeFromCart() {
+    dispatch({
+      type: actionTypes.REMOVE_FROM_CART,
+      payload: id,
+    })
+  }
+
   return (
     <div className={styles.productSummary}>
-      <img className={styles.img} src={Dumy} alt={product.name} />
-      <span>{product.name}</span>
-      <span>${product.price}</span>
+      <img className={styles.img} src={Dumy} alt={name} />
+      <span>{name}</span>
+      <span>${price}</span>
       <button
-        aria-label={`remove ${product.name} from cart`}
+        aria-label={`remove ${name} from cart`}
         className={styles.removeBtn}
+        onClick={removeFromCart}
       >
         <svg
           width="18"

@@ -1,11 +1,8 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect, useRef, useContext } from "react"
+import { CartContext } from "../../contexts/CartContext"
 
 import styles from "./cart.module.css"
 import ProductSummary from "./ProductSummary"
-
-import products from "../CommunityChoicesSection/ProductList/dummyData"
-
-const numberOfItems = 1
 
 function useOnClickOutside(ref, handler) {
   useEffect(() => {
@@ -33,12 +30,14 @@ function Cart() {
 
   useOnClickOutside(ref, () => setIsOpen(false))
 
+  const { products } = useContext(CartContext)
+
   return (
     <>
       <div
         className={`${styles.cart} ${isOpen ? styles.cartOpen : null}`}
         onMouseDown={() => {
-          if (isOpen || numberOfItems === 0) {
+          if (isOpen || products.products.length === 0) {
             return
           }
 
@@ -48,10 +47,10 @@ function Cart() {
         <div className={styles.cartIcon}>
           <div
             className={`${styles.counter} ${
-              numberOfItems > 0 ? styles.counterWithProduct : null
+              products.products.length > 0 ? styles.counterWithProduct : null
             }`}
           >
-            {numberOfItems}
+            {products.products.length}
           </div>
           <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
             <g>
@@ -66,7 +65,7 @@ function Cart() {
             </g>
           </svg>
         </div>
-        {numberOfItems > 0 && (
+        {products.length > 0 && (
           <svg
             className={styles.arrow}
             width="11"
@@ -86,9 +85,10 @@ function Cart() {
         <div className={styles.modalBackdrop}>
           <div ref={ref} className={styles.cartModal}>
             <div>
-              {products.map((product) => (
-                <ProductSummary key={product.slug} product={product} />
-              ))}
+              {products.products.length > 0 &&
+                products.products.map((product) => (
+                  <ProductSummary key={product.id} product={product} />
+                ))}
             </div>
             <button className={styles.btn}>submit</button>
           </div>
