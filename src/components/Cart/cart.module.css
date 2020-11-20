@@ -17,21 +17,6 @@
   transition: fill var(--trans);
 }
 
-.iconStroke {
-  fill: none;
-  stroke: var(--col-headings);
-  stroke-width: 2px;
-  transition: stroke var(--trans);
-}
-
-.cart:hover:not(.cartOpen) .iconPath {
-  fill: var(--col-accent);
-}
-
-.cart:hover:not(.cartOpen) .iconStroke {
-  stroke: var(--col-accent);
-}
-
 .counter {
   position: absolute;
   top: 20%;
@@ -48,60 +33,25 @@
   transition: background-color var(--trans);
 }
 
-.counterWithProduct {
+.notEmpty {
   background-color: var(--col-accent);
+}
+
+.iconStroke {
+  fill: none;
+  stroke: var(--col-headings);
+  stroke-width: 2px;
+  transition: stroke var(--trans);
+}
+
+.cart:hover:not(.cartOpen) .iconPath {
+  fill: var(--col-accent);
+}
+
+.cart:hover:not(.cartOpen) .iconStroke {
+  stroke: var(--col-accent);
 }
 
 .arrow {
   margin-left: 10px;
-}
-
-/* MODAL */
-
-.modalBackdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  background-color: rgba(28, 4, 46, 0.55);
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-}
-
-.cartModal {
-  z-index: 100;
-  width: 281px;
-  min-height: 276px;
-  max-height: 70vh;
-  filter: drop-shadow(0px 4px 11px rgba(0,0,0,.18));
-  background-color: var(--col-cart);
-  position: absolute;
-  right: 0;
-  transform: translate3d(-20%, 20%, 0);
-  border: 2px solid var(--col-cart-border);
-  padding: 37px 30px 23px 18px;
-  overflow-x: scroll;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: default;
-}
-
-.btn {
-  align-self: flex-end;
-  width: 88px;
-  height: 27px;
-  border: 2px solid transparent;
-  background-color: var(--col-accent);
-  text-transform: uppercase;
-  color: var(--col-headings);
-  font-weight: var(--fw-bold);
-  font-size: 12px;
-  cursor: pointer;
-  transition: border var(--trans);
-}
-.btn:hover {
-  border: 2px solid;
 }

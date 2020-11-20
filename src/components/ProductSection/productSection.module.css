@@ -5,18 +5,18 @@
   padding: 53px 0 200px;
 }
 
-.sectionHeader {
+.header {
   padding-left: calc(4% + 100px);
   padding-bottom: 64px;
 }
 
-.sectionTitle {
+.title {
   font-weight: var(--fw-bold);
   font-size: 28px;
   color: var(--col-headings);
 }
 
-.sectionIntro {
+.lead {
   max-width: 373px;
   font-weight: var(--fw-regular);
   font-size: 16px;
@@ -31,11 +31,11 @@
 }
 
 @media (max-width: 450px) {
-  .sectionTitle {
+  .title {
     font-size: 22px;
   }
 
-  .sectionIntro {
+  .lead {
     font-size: 14px;
   }
 }

@@ -1,56 +1,38 @@
-import React, { useState, useEffect, useRef, useContext } from "react"
+import React, { useState, useContext } from "react"
+
 import { CartContext } from "../../contexts/CartContext"
-
+import CartModal from "./CartModal"
 import styles from "./cart.module.css"
-import ProductSummary from "./ProductSummary"
-
-function useOnClickOutside(ref, handler) {
-  useEffect(() => {
-    const listener = (event) => {
-      if (!ref.current || ref.current.contains(event.target)) {
-        return
-      }
-
-      handler(event)
-    }
-
-    document.addEventListener("mousedown", listener, true)
-    document.addEventListener("touchstart", listener)
-
-    return () => {
-      document.removeEventListener("mousedown", listener, true)
-      document.removeEventListener("touchstart", listener)
-    }
-  }, [ref, handler])
-}
 
 function Cart() {
-  const ref = useRef(null)
   const [isOpen, setIsOpen] = useState()
 
-  useOnClickOutside(ref, () => setIsOpen(false))
-
   const { products } = useContext(CartContext)
+
+  function openCart() {
+    if (isOpen || !products.length) {
+      return
+    }
+    setIsOpen(true)
+  }
+
+  function closeCart() {
+    setIsOpen(false)
+  }
 
   return (
     <>
       <div
         className={`${styles.cart} ${isOpen ? styles.cartOpen : null}`}
-        onMouseDown={() => {
-          if (isOpen || products.products.length === 0) {
-            return
-          }
-
-          setIsOpen(true)
-        }}
+        onMouseDown={openCart}
       >
         <div className={styles.cartIcon}>
           <div
             className={`${styles.counter} ${
-              products.products.length > 0 ? styles.counterWithProduct : null
+              products.length ? styles.notEmpty : null
             }`}
           >
-            {products.products.length}
+            {products.length}
           </div>
           <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
             <g>
@@ -73,27 +55,14 @@ function Cart() {
             viewBox="0 0 11 9"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {isOpen ? (
-              <path className={styles.iconStroke} d="M1 8L5.5 2L10 8" />
-            ) : (
-              <path className={styles.iconStroke} d="M10 1L5.5 7L1 1" />
-            )}
+            <path
+              className={styles.iconStroke}
+              d={isOpen ? "M1 8L5.5 2L10 8" : "M10 1L5.5 7L1 1"}
+            />
           </svg>
         )}
       </div>
-      {isOpen && (
-        <div className={styles.modalBackdrop}>
-          <div ref={ref} className={styles.cartModal}>
-            <div>
-              {products.products.length > 0 &&
-                products.products.map((product) => (
-                  <ProductSummary key={product.id} product={product} />
-                ))}
-            </div>
-            <button className={styles.btn}>submit</button>
-          </div>
-        </div>
-      )}
+      {isOpen && <CartModal products={products} closeModal={closeCart} />}
     </>
   )
 }

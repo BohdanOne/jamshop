@@ -1,13 +1,13 @@
 import React, { useContext } from "react"
 
+import { CartContext, actionTypes } from "../../../contexts/CartContext"
 import Dumy from "../../../assets/products/dumy.svg"
 import styles from "./productSummary.module.css"
-import { CartContext, actionTypes } from "../../../contexts/CartContext"
 
 function ProductSummary({ product }) {
-  const { name, price, id } = product
-
   const { dispatch } = useContext(CartContext)
+
+  const { name, price, id } = product
 
   function removeFromCart() {
     dispatch({
@@ -17,7 +17,7 @@ function ProductSummary({ product }) {
   }
 
   return (
-    <div className={styles.productSummary}>
+    <div className={styles.container}>
       <img className={styles.img} src={Dumy} alt={name} />
       <span>{name}</span>
       <span>${price}</span>

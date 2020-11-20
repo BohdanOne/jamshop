@@ -2,7 +2,6 @@ import React from "react"
 
 import Layout from "../layouts"
 import SEO from "../components/SEO"
-
 import styles from "./404.module.css"
 
 export default function NotFoundPage() {

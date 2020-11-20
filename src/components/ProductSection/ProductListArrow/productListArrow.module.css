@@ -1,11 +1,11 @@
-.arrowContainer {
+.container {
   display: grid;
   place-items: center;
   background-color: transparent;
   border: none;
 }
 
-.arrowContainer * {
+.container * {
   fill: #fff;
   fill-opacity: .05;
   stroke: #fff;
@@ -13,23 +13,23 @@
   transition: stroke var(--trans);
 }
 
-.arrowContainer svg path {
+.container svg path {
   fill-opacity: 0;
 }
 
-.arrowContainer svg:hover * {
+.container svg:hover * {
   stroke: var(--col-accent);
 }
 
 @media (max-width: 775px) {
-  .arrowContainer svg {
+  .container svg {
     width: 55px;
     height: 55px;
   }
 }
 
 @media (max-width: 455px) {
-  .arrowContainer svg {
+  .container svg {
     width: 40px;
     height: 40px;
   }

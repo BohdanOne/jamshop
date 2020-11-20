@@ -1,4 +1,4 @@
-.page {
+.container {
   position: relative;
   top: 50%;
   left: 50%;
@@ -62,15 +62,17 @@
   cursor: pointer;
   transition: border var(--trans);
 }
+
 .btn:hover {
   border: 2px solid;
 }
 
 @media (max-width: 500px) {
-  .page {
+  .container {
     flex-direction: column;
     transform: translate3d(-50%, 100px, 0);
   }
+
   img {
     margin-bottom: 60px;
   }

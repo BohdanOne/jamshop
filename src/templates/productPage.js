@@ -1,13 +1,15 @@
 import React, { useContext } from "react"
 import { graphql } from "gatsby"
 
+import { CartContext, actionTypes } from "../contexts/CartContext"
 import Layout from "../layouts/index"
 import SEO from "../components/SEO/index"
-import styles from "./productPage.module.css"
 import Dumy from "../assets/products/dumy.svg"
-import { CartContext, actionTypes } from "../contexts/CartContext"
+import styles from "./productPage.module.css"
 
 function ProductPage({ data }) {
+  const { dispatch } = useContext(CartContext)
+
   const {
     name,
     price,
@@ -15,7 +17,6 @@ function ProductPage({ data }) {
     tag,
     slug,
   } = data.markdownRemark.frontmatter
-  const { dispatch } = useContext(CartContext)
 
   function addToCart() {
     dispatch({
@@ -23,10 +24,11 @@ function ProductPage({ data }) {
       payload: { name, price, slug },
     })
   }
+
   return (
     <Layout>
       <SEO title={name} />
-      <div className={styles.page}>
+      <div className={styles.container}>
         <img className={styles.img} src={Dumy} alt={name} />
         <div className={styles.content}>
           <p className={styles.tag}>{tag}</p>

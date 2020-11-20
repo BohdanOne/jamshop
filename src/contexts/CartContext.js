@@ -4,10 +4,8 @@ export const actionTypes = {
   ADD_TO_CART: "ADD_TO_CART",
   REMOVE_FROM_CART: "REMOVE_FROM_CART",
 }
-export const initialState = {
-  products: [],
-  dispatch: () => {},
-}
+
+export const initialState = []
 
 export const CartContext = React.createContext(initialState)
 
@@ -15,17 +13,11 @@ export const cartReducer = (state, action) => {
   switch (action.type) {
     case actionTypes.ADD_TO_CART:
       action.payload.id = Date.now()
-      return {
-        ...state,
-        products: [...state.products, { ...action.payload }],
-      }
+      // in case of adding to cart the same product more than once,
+      // id will allow to distinguish them
+      return [...state, { ...action.payload }]
     case actionTypes.REMOVE_FROM_CART:
-      return {
-        ...state,
-        products: state.products.filter(
-          (product) => product.id !== action.payload,
-        ),
-      }
+      return [...state.filter((product) => product.id !== action.payload)]
     default:
       return state
   }

@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Cart from "../Cart"
-
 import styles from "./header.module.css"
 
 export default function Header() {

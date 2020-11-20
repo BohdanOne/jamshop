@@ -1,13 +1,14 @@
 import React, { useRef, useContext } from "react"
 import { navigate } from "gatsby"
 
+import { CartContext, actionTypes } from "../../../contexts/CartContext"
 import Dumy from "../../../assets/products/dumy.svg"
 import styles from "./productCard.module.css"
-import { CartContext, actionTypes } from "../../../contexts/CartContext"
 
 function ProductCard({ product }) {
-  const btnRef = useRef()
   const { dispatch } = useContext(CartContext)
+
+  const btnRef = useRef()
 
   const { name, excerpt, slug } = product
 
@@ -27,14 +28,14 @@ function ProductCard({ product }) {
 
   return (
     <div
-      className={styles.productCard}
+      className={styles.container}
       onClick={(e) => {
         goToProductPage(e)
       }}
     >
-      <img className={styles.cardImg} src={Dumy} alt={name} />
-      <h3 className={styles.cardTitle}>{name}</h3>
-      <p className={styles.cardTxt}>{excerpt}</p>
+      <img className={styles.img} src={Dumy} alt={name} />
+      <h3 className={styles.name}>{name}</h3>
+      <p className={styles.excerpt}>{excerpt}</p>
       <button
         ref={btnRef}
         className={styles.addToCartBtn}

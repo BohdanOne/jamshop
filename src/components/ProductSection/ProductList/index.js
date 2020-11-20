@@ -2,52 +2,21 @@ import React, { useEffect, useState, useRef } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Carousel, { consts } from "react-elastic-carousel"
 
-import styles from "./productList.module.css"
+import { calculateItemsToShow } from "./helpers"
 import ProductCard from "../ProductCard/"
-import ProductListArrow from "../ProductListArrow/index"
-
-const PRODUCT_CARD_WIDTH = 305 // card 265px + padding 2*20px
-const ARROWS_WIDTH = 130
+import ProductListArrow from "../ProductListArrow/"
+import styles from "./productList.module.css"
 
 function renderArrow({ type, onClick }) {
   const direction = type === consts.PREV ? "left" : "right"
   return <ProductListArrow onClick={onClick} direction={direction} />
 }
 
-function calculateItemsToShow(parentWidth) {
-  const number = Math.floor((parentWidth - ARROWS_WIDTH) / PRODUCT_CARD_WIDTH)
-  if (number < 1) {
-    return 1
-  }
-  if (number > 4) {
-    return 4
-  }
-  return number
-}
-
 function ProductList() {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        allMarkdownRemark(filter: { frontmatter: { slug: { ne: "" } } }) {
-          nodes {
-            frontmatter {
-              name
-              slug
-              excerpt
-              price
-            }
-          }
-        }
-      }
-    `,
+  const data = useStaticQuery(query)
+  const products = data.allMarkdownRemark.nodes.map(
+    (product) => product.frontmatter,
   )
-
-  const productsFrontmatter = data.allMarkdownRemark.nodes
-
-  const products = productsFrontmatter
-    .map((product) => product.frontmatter)
-    .filter((product) => product.name !== null)
 
   const ref = useRef(null)
   const [itemsToShow, setItemsToShow] = useState(null)
@@ -69,7 +38,7 @@ function ProductList() {
   })
 
   return (
-    <div className={styles.listContainer} ref={ref}>
+    <div className={styles.container} ref={ref}>
       {ref.current && (
         <Carousel
           itemsToShow={itemsToShow}
@@ -88,5 +57,20 @@ function ProductList() {
     </div>
   )
 }
+
+const query = graphql`
+  query {
+    allMarkdownRemark(filter: { frontmatter: { slug: { ne: null } } }) {
+      nodes {
+        frontmatter {
+          name
+          slug
+          excerpt
+          price
+        }
+      }
+    }
+  }
+`
 
 export default ProductList
