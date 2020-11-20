@@ -13,3 +13,20 @@
   width: 26px;
   height: 28px;
 }
+
+.removeBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.removeBtn svg {
+  fill: var(--col-headings);
+  transition: fill var(--trans);
+}
+
+.removeBtn:hover svg {
+  fill: var(--col-accent);
+}

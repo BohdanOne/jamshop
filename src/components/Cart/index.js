@@ -17,11 +17,11 @@ function useOnClickOutside(ref, handler) {
       handler(event)
     }
 
-    document.addEventListener("click", listener)
+    document.addEventListener("mousedown", listener, true)
     document.addEventListener("touchstart", listener)
 
     return () => {
-      document.removeEventListener("click", listener)
+      document.removeEventListener("mousedown", listener, true)
       document.removeEventListener("touchstart", listener)
     }
   }, [ref, handler])
@@ -29,15 +29,15 @@ function useOnClickOutside(ref, handler) {
 
 function Cart() {
   const ref = useRef(null)
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState()
 
   useOnClickOutside(ref, () => setIsOpen(false))
 
   return (
     <>
       <div
-        className={styles.cart}
-        onClick={() => {
+        className={`${styles.cart} ${isOpen ? styles.cartOpen : null}`}
+        onMouseDown={() => {
           if (isOpen || numberOfItems === 0) {
             return
           }
