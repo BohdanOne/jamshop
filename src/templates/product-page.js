@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../layouts/index"
 import SEO from "../components/SEO/index"
-
+import styles from "./productPage.module.css"
 import Dumy from "../assets/products/dumy.svg"
 
 function ProductPage({ data }) {
@@ -12,14 +12,14 @@ function ProductPage({ data }) {
   return (
     <Layout>
       <SEO title={name} />
-      <div>
-        <img src={Dumy} alt={name} />
-        <div style={{ color: "#fff" }}>
-          <p>{tag}</p>
-          <h1>{name}</h1>
-          <div>{description}</div>
-          <p>${price}</p>
-          <button>add to cart</button>
+      <div className={styles.page}>
+        <img className={styles.img} src={Dumy} alt={name} />
+        <div className={styles.content}>
+          <p className={styles.tag}>{tag}</p>
+          <h1 className={styles.name}>{name}</h1>
+          <div className={styles.description}>{description}</div>
+          <p className={styles.price}>${price}</p>
+          <button className={styles.btn}>add to cart</button>
         </div>
       </div>
     </Layout>
@@ -34,6 +34,7 @@ export const query = graphql`
         price
         description
         tag
+        image
       }
     }
   }
