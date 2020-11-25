@@ -1,8 +1,8 @@
 import React, { useContext } from "react"
 import { Link } from "gatsby"
 
-import { CartContext, actionTypes } from "../../../contexts/CartContext"
-import Dumy from "../../../assets/products/dumy.svg"
+import { CartContext, actionTypes } from "contexts/CartContext"
+import Dumy from "assets/products/dumy.svg"
 import styles from "./productSummary.module.css"
 
 function ProductSummary({ product }) {

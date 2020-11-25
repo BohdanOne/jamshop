@@ -1,8 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import HeroBackground from "../../assets/elements/hero_background.svg"
-import HeroImage from "../../assets/elements/monitor.svg"
+import HeroBackground from "assets/elements/hero_background.svg"
+import HeroImage from "assets/elements/monitor.svg"
 import styles from "./hero.module.css"
 
 function HomepageHero() {

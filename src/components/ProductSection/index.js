@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import ProductList from "./ProductList"
+import ProductList from "components/ProductSection/ProductList"
 import styles from "./productSection.module.css"
 
 function ProductSection() {

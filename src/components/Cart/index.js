@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react"
 
-import { CartContext } from "../../contexts/CartContext"
+import { CartContext } from "contexts/CartContext"
 import CartModal from "./CartModal"
 import styles from "./cart.module.css"
 

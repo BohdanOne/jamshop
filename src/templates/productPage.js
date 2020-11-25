@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
 import { graphql } from "gatsby"
 
-import { CartContext, actionTypes } from "../contexts/CartContext"
-import Layout from "../layouts/index"
-import SEO from "../components/SEO/index"
-import Dumy from "../assets/products/dumy.svg"
+import { CartContext, actionTypes } from "contexts/CartContext"
+import Layout from "layouts/index"
+import SEO from "components/SEO/index"
+import Dumy from "assets/products/dumy.svg"
 import styles from "./productPage.module.css"
 
 function ProductPage({ data }) {

@@ -3,8 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Carousel, { consts } from "react-elastic-carousel"
 
 import { calculateItemsToShow } from "./helpers"
-import ProductCard from "../ProductCard/"
-import ProductListArrow from "../ProductListArrow/"
+import ProductCard from "components/ProductSection/ProductCard/"
+import ProductListArrow from "components/ProductSection/ProductListArrow/"
 import styles from "./productList.module.css"
 
 function renderArrow({ type, onClick }) {

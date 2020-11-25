@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 
-import useOnClickOutside from "../../../hooks/useOnClickOutside"
-import ProductSummary from "../ProductSummary"
+import useOnClickOutside from "hooks/useOnClickOutside"
+import ProductSummary from "components/Cart/ProductSummary"
 import styles from "./cartModal.module.css"
 
 function CartModal({ products, closeModal }) {
