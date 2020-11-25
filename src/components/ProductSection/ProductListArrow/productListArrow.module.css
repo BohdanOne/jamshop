@@ -6,9 +6,9 @@
 }
 
 .container * {
-  fill: #fff;
+  fill: var(--col-white);
   fill-opacity: .05;
-  stroke: #fff;
+  stroke: var(--col-white);
   cursor: pointer;
   transition: stroke var(--trans);
 }

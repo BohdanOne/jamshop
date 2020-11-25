@@ -1,48 +1,48 @@
 .container {
-  max-width: 1145px;
-  margin: 101px auto 185px;
+  width: 92%;
+  max-width: 1336px;
+  margin: 164px auto 185px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
+.imgContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
 .heroImg {
-  height: auto;
   max-width: 100%;
 }
 
-.content {
-  position: relative;
-  height: 100%;
-  min-width: 500px;
+.contentContainer {
   width: 50%;
-  max-width: 570px;
-  padding-left: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .title {
+  max-width: 510px;
+  margin-left: 33px;
+  margin-bottom: 33px;
+  padding-top: 23px;
+  background: url("../../assets/elements/hero_decor.svg") no-repeat;
+  background-position: top right;
   color: var(--col-headline);
   font-family: var(--ff-headings);
+  font-weight: var(--fw-bold);
   font-size: 48px;
   line-height: 1.1458;
-  align-self: center;
-}
-
-.decorImg {
-  align-self: flex-end;
-  position: relative;
-  top: 60px;
 }
 
 .btn {
+  width: 146px;
+  height: 40px;
   align-self: flex-start;
-  padding: 1em 2em;
-  margin: 10px;
-  width: fit-content;
   font-size: 13px;
   font-family: inherit;
   font-weight: var(--fw-bold);
@@ -54,6 +54,8 @@
   border-radius: 4px;
   cursor: pointer;
   transition: border var(--trans);
+  display: grid;
+  place-items: center;
 }
 
 .btn:hover {
@@ -68,25 +70,33 @@
   max-width: 100%;
 }
 
-@media (max-width: 1046px) {
+@media (max-width: 975px) {
   .container {
     margin: 100px auto;
+    flex-direction: column;
   }
 
-  .content {
+  .imgContainer {
     width: 100%;
-    padding-left: 0;
+    margin-bottom: 50px;
+  }
+
+  .contentContainer {
+    width: 80%;
+  }
+  
+  .title {
+    margin-left: 0;
+    width: 100%;
+    align-self: center;
   }
 }
-
 @media (max-width: 682px) {
   .container {
-    margin: 50px auto;
+    margin: 60px auto;
   }
-
-  .content {
-    padding: 0;
-    min-width: 100%;
+  .imgContainer {
+    width: 80%;
   }
 
   .title {
