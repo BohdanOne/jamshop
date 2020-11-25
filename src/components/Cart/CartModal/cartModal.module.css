@@ -35,7 +35,6 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: default;
-  animation: slideIn 200ms ease-out;
 }
 
 .btn {
@@ -59,11 +58,5 @@
 @media (max-width: 300px) {
   .container {
     width: 100%;
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translate3d(0, -120%, 0);
   }
 }
