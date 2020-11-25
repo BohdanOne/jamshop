@@ -19,5 +19,6 @@
   --col-tag: #fbe067;
   --col-accent-product: #ab528d;
   /* transitions */
-  --trans: 300ms ease-in-out;
+  --time: 300ms;
+  --trans: var(--time) ease-in-out;
 }

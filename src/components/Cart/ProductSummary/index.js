@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import { Link } from "gatsby"
 
 import { CartContext, actionTypes } from "../../../contexts/CartContext"
 import Dumy from "../../../assets/products/dumy.svg"
@@ -7,7 +8,7 @@ import styles from "./productSummary.module.css"
 function ProductSummary({ product }) {
   const { dispatch } = useContext(CartContext)
 
-  const { name, price, id } = product
+  const { name, price, id, slug } = product
 
   function removeFromCart() {
     dispatch({
@@ -19,7 +20,7 @@ function ProductSummary({ product }) {
   return (
     <div className={styles.container}>
       <img className={styles.img} src={Dumy} alt={name} />
-      <span>{name}</span>
+      <Link to={`/${slug}`} className={styles.name}>{name}</Link>
       <span>${price}</span>
       <button
         aria-label={`remove ${name} from cart`}

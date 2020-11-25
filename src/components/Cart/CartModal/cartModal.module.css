@@ -1,5 +1,6 @@
 .backdrop {
   position: fixed;
+  height: 100vh;
   top: 0;
   right: 0;
   bottom: 0;
@@ -10,16 +11,23 @@
   cursor: pointer;
 }
 
+.container {
+  position: relative;
+  width: 88%;
+  max-width: 1274px;
+  margin: 0 auto;
+}
+
 .modal {
   z-index: 100;
   width: 281px;
   min-height: 276px;
   max-height: 70vh;
-  filter: drop-shadow(0px 4px 11px rgba(0,0,0,.18));
+  filter: drop-shadow(0px 4px 11px rgba(0, 0, 0, 0.18));
   background-color: var(--col-cart);
   position: absolute;
   right: 0;
-  transform: translate3d(-20%, 20%, 0);
+  transform: translate3d(0, 60px, 0);
   border: 2px solid var(--col-cart-border);
   padding: 37px 30px 23px 18px;
   overflow-x: scroll;
@@ -27,6 +35,7 @@
   flex-direction: column;
   justify-content: space-between;
   cursor: default;
+  animation: slideIn 200ms ease-out;
 }
 
 .btn {
@@ -45,4 +54,16 @@
 
 .btn:hover {
   border: 2px solid;
+}
+
+@media (max-width: 300px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translate3d(0, -120%, 0);
+  }
 }

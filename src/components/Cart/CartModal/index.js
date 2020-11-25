@@ -10,14 +10,16 @@ function CartModal({ products, closeModal }) {
 
   return (
     <div className={styles.backdrop}>
-      <div ref={ref} className={styles.modal}>
-        <div>
-          {products.length &&
-            products.map((product) => (
-              <ProductSummary key={product.id} product={product} />
-            ))}
+      <div className={styles.container}>
+        <div ref={ref} className={styles.modal}>
+          <div>
+            {products.length &&
+              products.map((product) => (
+                <ProductSummary key={product.id} product={product} />
+              ))}
+          </div>
+          <button className={styles.btn}>submit</button>
         </div>
-        <button className={styles.btn}>submit</button>
       </div>
     </div>
   )

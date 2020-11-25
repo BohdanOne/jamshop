@@ -1,6 +1,6 @@
 .container {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 35px 1fr 50px 20px;
   align-items: center;
   color: var(--col-headings);
   font-weight: var(--fw-bold);
@@ -12,6 +12,17 @@
 .img {
   width: 26px;
   height: 28px;
+}
+
+.name {
+  color: var(--col-headings);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--trans);
+}
+
+.name:hover {
+  color: var(--col-accent);
 }
 
 .removeBtn {

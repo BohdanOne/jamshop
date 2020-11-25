@@ -7,12 +7,14 @@ import styles from "./header.module.css"
 export default function Header() {
   return (
     <header className={styles.header}>
-      <div>
-        <Link className={styles.title} to="/">
-          JAM SHOP
-        </Link>
+      <div className={styles.container}>
+        <div>
+          <Link className={styles.title} to="/">
+            JAM SHOP
+          </Link>
+        </div>
+        <Cart />
       </div>
-      <Cart />
     </header>
   )
 }
