@@ -29,7 +29,7 @@ function HomepageHero() {
           </Link>
         </div>
       </section>
-      <img src={HeroBackground} className={styles.backgroundImg} />
+      <img src={HeroBackground} className={styles.backgroundImg} alt="" />
     </>
   )
 }

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "BEJAMAS | GATSBY SHOP",
-    description: "",
+    description: "Jam Shop",
     author: "@bejamasio",
   },
   plugins: [
