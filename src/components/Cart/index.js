@@ -29,10 +29,10 @@ function Cart() {
         <div className={styles.cartIcon}>
           <div
             className={`${styles.counter} ${
-              products.length ? styles.notEmpty : null
+              products?.length ? styles.notEmpty : null
             }`}
           >
-            {products.length}
+            {products?.length ? products.length : 0}
           </div>
           <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
             <g>
@@ -47,7 +47,7 @@ function Cart() {
             </g>
           </svg>
         </div>
-        {products.length > 0 && (
+        {products && products.length > 0 && (
           <svg
             className={styles.arrow}
             width="11"
