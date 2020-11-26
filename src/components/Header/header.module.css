@@ -5,6 +5,11 @@
   transform: translate3d(-50%, 0, 0);
   z-index: 100;
   width: 100%;
+  transition: background-color var(--trans);
+}
+
+.header[data-scrolled="true"] {
+ background-color: var(--col-bg-transparent);
 }
 
 .container {

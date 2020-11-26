@@ -8,6 +8,7 @@
   /* colors */
   --col-white: #fff;
   --col-bg: #1c042e;
+  --col-bg-transparent: rgba(28, 4, 46, .5);
   --col-headline: #e4e3e3;
   --col-headings: #eee;
   --col-txt: #c4c4c4;
