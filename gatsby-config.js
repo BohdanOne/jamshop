@@ -18,36 +18,36 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "gatsby-starter-default",
-        short_name: "starter",
+        name: "Jam Shop",
+        short_name: "Jam Shop",
         start_url: "/",
-        background_color: "#663399",
-        theme_color: "#663399",
+        background_color: "#1c042e",
+        theme_color: "#1c042e",
         display: "minimal-ui",
         icon: "./src/assets/images/icon.png", // This path is relative to the root of the site.
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: "gatsby-plugin-google-fonts",
       options: {
-        fonts: [`montserrat:400,700`, `roboto:400`],
+        fonts: ["montserrat:400,700", "roboto:400"],
         display: "swap",
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `products`,
+        name: "products",
         path: `${__dirname}/src/data/products`,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `pages`,
+        name: "pages",
         path: `${__dirname}/src/pages`,
       },
     },
-    `gatsby-transformer-remark`,
+    "gatsby-transformer-remark",
   ],
 }
