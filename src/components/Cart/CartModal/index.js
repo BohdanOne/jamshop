@@ -12,18 +12,20 @@ function CartModal({ products, closeModal }) {
 
   const prefersReducedMotion = usePrefersReducedMotion()
 
-  const animationConfig = prefersReducedMotion ? {} : {
-    from: { opacity: 0, transform: "translate3d(0, -200px, 0)" },
-    to: { opacity: 1, transform: "translate3d(0, 60px, 0)" },
-    config: { mass: 3, tension: 450, friction: 30 },
-  }
+  const animationConfig = prefersReducedMotion
+    ? {}
+    : {
+        from: { opacity: 0, transform: "translate3d(0, -200px, 0)" },
+        to: { opacity: 1, transform: "translate3d(0, 60px, 0)" },
+        config: { mass: 3, tension: 450, friction: 35 },
+      }
 
-  const style = useSpring(animationConfig)
+  const animation = useSpring(animationConfig)
 
   return (
     <div className={styles.backdrop}>
       <div className={styles.container}>
-        <animated.div ref={ref} style={style} className={styles.modal}>
+        <animated.div ref={ref} style={animation} className={styles.modal}>
           <div>
             {products.length &&
               products.map((product) => (

@@ -20,7 +20,9 @@ function ProductSummary({ product }) {
   return (
     <div className={styles.container}>
       <img className={styles.img} src={Dumy} alt={name} />
-      <Link to={`/${slug}`} className={styles.name}>{name}</Link>
+      <Link to={`/${slug}`} className={styles.name}>
+        {name}
+      </Link>
       <span>${price}</span>
       <button
         aria-label={`remove ${name} from cart`}
